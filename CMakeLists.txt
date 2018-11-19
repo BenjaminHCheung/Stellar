@@ -12,13 +12,22 @@ IF (NOT TARGET gtest)
 ENDIF()
 
 add_library(${PROJECT_NAME} STATIC
-
+        starship.h
+        starship.cpp
+        probabilitymath.h
+        probabilitymath.cpp
+        spaceboard.h
+        spaceboard.cpp
+        vector3d.h
+        vector3d.cpp
+        positionnodes.h
+        positionnodes.cpp
     	)
 
 set(TEST_NAME ${PROJECT_NAME}_UnitTest)
 
 add_executable(${TEST_NAME}
-
+        vector_unittest.cpp
         )
 
 target_link_libraries(${TEST_NAME} gtest gtest_main ${PROJECT_NAME})
