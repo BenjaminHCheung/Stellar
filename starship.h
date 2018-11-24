@@ -1,11 +1,12 @@
 #ifndef STARSHIP_H
 #define STARSHIP_H
 
+#include "stellarobject.h"
 
-class Starship
+class Starship: public StellarObject
 {
 public:
-    Starship();
+    Starship(int size, int attack, int defense, int speed);
 
     int get_size();
     int get_attack();

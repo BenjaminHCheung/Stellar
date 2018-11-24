@@ -1,8 +1,11 @@
 #include "starship.h"
+#include "stellarobject.h"
 
-Starship::Starship()
+Starship::Starship(int size, int attack, int defense, int speed): StellarObject(size)
 {
-
+    mAttack = attack;
+    mDefense = defense;
+    mSpeed = speed;
 }
 
 int Starship::get_size()
