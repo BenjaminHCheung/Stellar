@@ -6,7 +6,6 @@ class Vector3d
 {
 public:
     Vector3d(double xInput, double yInput, double zInput);
-    ~Vector3d();
 
     void set_x_value(double xInput);
     void set_y_value(double yInput);
