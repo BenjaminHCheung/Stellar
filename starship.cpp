@@ -8,10 +8,6 @@ Starship::Starship(int size, int attack, int defense, int speed): StellarObject(
     mSpeed = speed;
 }
 
-int Starship::get_size()
-{
-    return mSize;
-}
 int Starship::get_attack()
 {
     return mAttack;

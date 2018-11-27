@@ -7,8 +7,6 @@ Vector3d::Vector3d(double xInput, double yInput, double zInput)
     set_z_value(zInput);
 }
 
-Vector3d::~Vector3d(){}
-
 void Vector3d::set_x_value(double xInput)
 {
     mXValue = xInput;

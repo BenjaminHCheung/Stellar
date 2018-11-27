@@ -33,3 +33,21 @@ SpaceBoard::SpaceBoard()
         }
     }
 }
+
+int SpaceBoard::get_board_length()
+{
+    return mBoardLength;
+}
+int SpaceBoard::get_board_width()
+{
+    return mBoardWidth;
+}
+int SpaceBoard::get_board_height()
+{
+    return mBoardHeight;
+}
+
+PositionNodes* SpaceBoard::get_node_pointer(int lengthLocation, int widthLocation, int heightLocation)
+{
+    return mSpaceGrid[lengthLocation][widthLocation][heightLocation];
+}
