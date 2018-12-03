@@ -6,7 +6,7 @@
 class Starship: public StellarObject
 {
 public:
-    Starship(int size, int attack, int defense, int speed);
+    Starship(PositionNodes* position, int size, int attack, int defense, int speed);
 
     int get_attack();
     int get_Defense();
