@@ -24,6 +24,8 @@ add_library(${PROJECT_NAME} STATIC
         positionnodes.cpp
         stellarobject.h
         stellarobject.cpp
+        stellarbody.h
+        stellarbody.cpp
     	)
 
 set(TEST_NAME ${PROJECT_NAME}_UnitTest)
