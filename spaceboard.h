@@ -14,9 +14,9 @@ public:
     PositionNodes* get_node_pointer(int lengthLocation, int widthLocation, int heightLocation);
 
 private:
-    static const int mBoardLength{15};
-    static const int mBoardWidth{15};
-    static const int mBoardHeight{15};
+    static const int mBoardLength{12};
+    static const int mBoardWidth{12};
+    static const int mBoardHeight{12};
 
     PositionNodes* mSpaceGrid[mBoardLength][mBoardWidth][mBoardHeight];
 };
