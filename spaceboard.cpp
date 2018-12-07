@@ -3,9 +3,9 @@
 SpaceBoard::SpaceBoard()
 {
     int accountingForOriginNode{-1};
-    int halfLength{(mBoardLength + accountingForOriginNode)};
-    int halfWidth{(mBoardWidth + accountingForOriginNode)};
-    int halfHeight{(mBoardHeight + accountingForOriginNode)};
+    int halfLength{(mBoardLength + accountingForOriginNode)/2};
+    int halfWidth{(mBoardWidth + accountingForOriginNode)/2};
+    int halfHeight{(mBoardHeight + accountingForOriginNode)/2};
 
     for(int xLocation{0}; xLocation < mBoardLength; xLocation++)
     {
@@ -51,3 +51,23 @@ PositionNodes* SpaceBoard::get_node_pointer(int lengthLocation, int widthLocatio
 {
     return mSpaceGrid[lengthLocation][widthLocation][heightLocation];
 }
+
+void SpaceBoard::add_starship(int teamNumber, int size, int xPosition, int yPosition, int zPosition)
+{
+    int speed{5 - size};
+    int defense{size * 3};
+    int attack{size};
+    PositionNodes* spawnPosition{get_node_pointer(xPosition,yPosition,zPosition)};
+
+    Starship* myNewShip = new Starship(spawnPosition, size, attack, defense, speed);
+
+    if(teamNumber == 1)
+    {
+        mTeamOneShips.push_back(myNewShip);
+    }
+    else if(teamNumber == 2)
+    {
+        mTeamTwoShips.push_back(myNewShip);
+    }
+}
+void add_stellar_body();
