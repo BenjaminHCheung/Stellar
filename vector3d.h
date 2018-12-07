@@ -1,7 +1,6 @@
 #ifndef VECTOR3D_H
 #define VECTOR3D_H
 
-
 class Vector3d
 {
 public:
@@ -26,7 +25,6 @@ private:
     double mXValue;
     double mYValue;
     double mZValue;
-
 
 };
 
