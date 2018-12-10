@@ -70,4 +70,26 @@ void SpaceBoard::add_starship(int teamNumber, int size, int xPosition, int yPosi
         mTeamTwoShips.push_back(myNewShip);
     }
 }
-void add_stellar_body();
+void SpaceBoard::add_stellar_body(int size, int xPosition, int yPosition, int zPosition)
+{
+    double radius{size / 10.0};
+    PositionNodes* spawnPosition{get_node_pointer(xPosition,yPosition,zPosition)};
+
+    StellarBody* newObject = new StellarBody(spawnPosition, size, "", radius);
+    mStellarBodies.push_back(newObject);
+}
+
+std::vector<Starship*>* SpaceBoard::get_team_one_ships()
+{
+    return &mTeamOneShips;
+}
+
+std::vector<Starship*>* SpaceBoard::get_team_two_ships()
+{
+    return &mTeamTwoShips;
+}
+
+std::vector<StellarBody*>* SpaceBoard::get_stellar_body_lists()
+{
+    return &mStellarBodies;
+}

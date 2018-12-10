@@ -20,6 +20,10 @@ public:
     void add_starship(int teamNumber, int size, int xPosition, int yPosition, int zPosition);
     void add_stellar_body(int size, int xPosition, int yPosition, int zPosition);
 
+    std::vector<Starship*>* get_team_one_ships();
+    std::vector<Starship*>* get_team_two_ships();
+    std::vector<StellarBody*>* get_stellar_body_lists();
+
 private:
     static const int mBoardLength{12};
     static const int mBoardWidth{12};
