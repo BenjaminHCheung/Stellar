@@ -81,6 +81,51 @@ void SpaceBoard::add_stellar_body(int size, int xPosition, int yPosition, int zP
 
 void SpaceBoard::generate_default_lists()
 {
+    int teamOne{1};
+    int teamTwo{2};
+
+    int battleship{4};
+    int crusier{3};
+    int destroyer{2};
+    int corvette{1};
+
+    const int standardListLength{12};
+    int standardShipList[standardListLength]
+                            {battleship,
+                            battleship,
+                            crusier,
+                            crusier,
+                            crusier,
+                            destroyer,
+                            destroyer,
+                            destroyer,
+                            corvette,
+                            corvette,
+                            corvette,
+                            corvette};
+
+    int teamOneXPosition{3};
+    int teamTwoXPosition{mBoardLength-teamOneXPosition};
+
+    int zPosition{7};
+    int startingYPosition{2};
+
+    for(int iterator{0}; iterator < standardListLength; iterator++)
+    {
+        add_starship(teamOne, standardShipList[iterator], teamOneXPosition, (startingYPosition + iterator), zPosition);
+        add_starship(teamTwo, standardShipList[iterator], teamTwoXPosition, (startingYPosition + iterator), zPosition);
+    }
+
+    int
+}
+
+void SpaceBoard::generate_ships_lists()
+{
+
+}
+
+void SpaceBoard::generate_planet_lists()
+{
 
 }
 
