@@ -79,6 +79,16 @@ void SpaceBoard::add_stellar_body(int size, int xPosition, int yPosition, int zP
     mStellarBodies.push_back(newObject);
 }
 
+void SpaceBoard::generate_default_lists()
+{
+
+}
+
+void SpaceBoard::clear_lists()
+{
+
+}
+
 std::vector<Starship*>* SpaceBoard::get_team_one_ships()
 {
     return &mTeamOneShips;
