@@ -125,7 +125,18 @@ void SpaceBoard::generate_ships_lists()
 
 void SpaceBoard::generate_planet_list()
 {
+    const int standardListSize{6};
 
+    int planetListSizes[standardListSize]{4,7,2,3,9,1};
+    int xPositions[standardListSize]{4,1,6,3,2,5};
+    int yPositions[standardListSize]{9,7,11,4,6,13};
+    int zPositions[standardListSize]{4,12,7,5,10,6};
+
+    for(int iterator{0}; iterator < standardListSize; iterator++)
+    {
+        add_stellar_body(planetListSizes[iterator], xPositions[iterator], yPositions[iterator], zPositions[iterator]);
+        add_stellar_body(planetListSizes[iterator], (mBoardLength - 1 - xPositions[iterator]), (mBoardWidth - 1 - yPositions[iterator]), (mBoardHeight - 1 - zPositions[iterator]));
+    }
 }
 
 void SpaceBoard::clear_lists()
