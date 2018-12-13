@@ -11,4 +11,32 @@ TEST(GivenAPlanetOfApproriateSizeAndLocation, WhenUsingTheAddStellarBodyFunction
 
 }
 
-TEST()
+TEST(GivenACommandToGenerateAllShips, WhenCallingTheGenerateShipsListsFunction_BothTeamListsAreFilledWithTheDefaultListOfShipsPositionedInALine)
+{
+
+}
+
+TEST(GivenACommandToGenerateAllStellarBodies, WhenCallingTheGeneratePlanetLitsFunction_TheStellarBodyListFillsWithAPlanetInTheCorrectLocationAndASecondPlanetPositionedOnTheOppositeSideOfTheOrigin)
+{
+
+}
+
+TEST(GivenACommandToGenerateDefaultLists, WhenUsingTheGenerateDefaultListsFunction_AllThreeListsAreFilledCorrectly)
+{
+
+}
+
+TEST(GivenACommandToClearTheShipLists, WhenUsingTheClearShipsFunction_AllShipsAreClearedFromBothLists)
+{
+
+}
+
+TEST(GivenACommandToClearTheStellarBodyList, WhenUsingTheClearPlanetsFunction_AllPlanetEntriesAreRemovedFromTheList)
+{
+
+}
+
+TEST(GivenACommandToClearLists, WhenUsingTheClearListsFunction_AllListsAreClearedOfAllEntries)
+{
+
+}
