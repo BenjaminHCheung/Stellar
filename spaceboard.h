@@ -21,7 +21,7 @@ public:
     void add_stellar_body(int size, int xPosition, int yPosition, int zPosition);
     void generate_default_lists();
     void generate_ships_lists();
-    void generate_planet_lists();
+    void generate_planet_list();
     void clear_lists();
 
     std::vector<Starship*>* get_team_one_ships();

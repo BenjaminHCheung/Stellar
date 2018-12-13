@@ -81,6 +81,12 @@ void SpaceBoard::add_stellar_body(int size, int xPosition, int yPosition, int zP
 
 void SpaceBoard::generate_default_lists()
 {
+    generate_ships_lists();
+    generate_planet_list();
+}
+
+void SpaceBoard::generate_ships_lists()
+{
     int teamOne{1};
     int teamTwo{2};
 
@@ -115,16 +121,9 @@ void SpaceBoard::generate_default_lists()
         add_starship(teamOne, standardShipList[iterator], teamOneXPosition, (startingYPosition + iterator), zPosition);
         add_starship(teamTwo, standardShipList[iterator], teamTwoXPosition, (startingYPosition + iterator), zPosition);
     }
-
-    int
 }
 
-void SpaceBoard::generate_ships_lists()
-{
-
-}
-
-void SpaceBoard::generate_planet_lists()
+void SpaceBoard::generate_planet_list()
 {
 
 }
