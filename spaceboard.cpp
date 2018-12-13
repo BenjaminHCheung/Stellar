@@ -110,11 +110,11 @@ void SpaceBoard::generate_ships_lists()
                             corvette,
                             corvette};
 
-    int teamOneXPosition{3};
-    int teamTwoXPosition{mBoardLength-teamOneXPosition};
+    int teamOneXPosition{1};
+    int teamTwoXPosition{mBoardLength - teamOneXPosition};
 
-    int zPosition{7};
-    int startingYPosition{2};
+    int zPosition{6};
+    int startingYPosition{0};
 
     for(int iterator{0}; iterator < standardListLength; iterator++)
     {
