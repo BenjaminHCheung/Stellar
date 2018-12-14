@@ -100,3 +100,12 @@ TEST(GivenACommandToClearTheStellarBodyList, WhenUsingTheClearPlanetsFunction_Al
     EXPECT_EQ(expectedSize, mySpaceBoard.get_stellar_body_lists()->size());
 }
 
+TEST(GivenACommandToClearBothTeamLists, WhenUsingTheClearTeamListsFunction_BothListsAreEmptied)
+{
+    SpaceBoard mySpaceBoard{SpaceBoard()};
+    mySpaceBoard.generate_ships_lists();
+    mySpaceBoard.clear_team_lists();
+    unsigned long long int expectedSize{0};
+    EXPECT_EQ(expectedSize, mySpaceBoard.get_team_one_ships()->size());
+    EXPECT_EQ(expectedSize, mySpaceBoard.get_team_two_ships()->size());
+}

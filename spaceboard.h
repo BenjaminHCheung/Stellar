@@ -26,8 +26,6 @@ public:
     void clear_team_two();
     void clear_team_lists();
     void clear_planet_list();
-    void clear_lists();
-
 
     std::vector<Starship*>* get_team_one_ships();
     std::vector<Starship*>* get_team_two_ships();
