@@ -158,3 +158,17 @@ std::vector<StellarBody*>* SpaceBoard::get_stellar_body_lists()
 {
     return &mStellarBodies;
 }
+
+void SpaceBoard::clear_team_one()
+{
+    unsigned long long int size{mTeamOneShips.size()};
+    for(unsigned long long int iterator{0}; iterator < size; iterator)
+    {
+        mTeamOneShips.pop_back();
+    }
+}
+
+void clear_team_two();
+void clear_team_lists();
+void clear_planet_list();
+void clear_lists();
