@@ -73,9 +73,25 @@ TEST(GivenACommandToGenerateDefaultLists, WhenUsingTheGenerateDefaultListsFuncti
     EXPECT_EQ(expectedSize, mySpaceBoard.get_stellar_body_lists()->size());
 }
 
+TEST(GivenACommandToClearTeamOneShipList, WhenUsingTheClearTeamOneShipsFunction_AllShipsAreClearedFromTheOneList)
+{
+    SpaceBoard mySpaceBoard{SpaceBoard()};
+    mySpaceBoard.generate_ships_lists();
+    mySpaceBoard.clear_team_one();
+    unsigned long long int expectedSize{0};
+    EXPECT_EQ(expectedSize, mySpaceBoard.get_team_one_ships()->size());
+}
+
+//TEST(GivenACommandToClearTeamOneShipList, WhenUsingTheClearTeamOneShipsFunction_AllShipsAreClearedFromTheOneList)
+//{
+//    SpaceBoard mySpaceBoard{SpaceBoard()};
+//    mySpaceBoard.generate_ships_lists();
+//}
+
 //TEST(GivenACommandToClearTheShipLists, WhenUsingTheClearShipsFunction_AllShipsAreClearedFromBothLists)
 //{
-
+//    SpaceBoard mySpaceBoard{SpaceBoard()};
+//    mySpaceBoard
 //}
 
 //TEST(GivenACommandToClearTheStellarBodyList, WhenUsingTheClearPlanetsFunction_AllPlanetEntriesAreRemovedFromTheList)
