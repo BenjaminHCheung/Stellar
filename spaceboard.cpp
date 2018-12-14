@@ -139,11 +139,6 @@ void SpaceBoard::generate_planet_list()
     }
 }
 
-void SpaceBoard::clear_lists()
-{
-
-}
-
 std::vector<Starship*>* SpaceBoard::get_team_one_ships()
 {
     return &mTeamOneShips;
@@ -177,6 +172,12 @@ void SpaceBoard::clear_team_two()
     }
 }
 
+void SpaceBoard::clear_team_lists()
+{
+    clear_team_one();
+    clear_team_two();
+}
+
 void SpaceBoard::clear_planet_list()
 {
     unsigned long long int size{mStellarBodies.size()};
@@ -185,3 +186,4 @@ void SpaceBoard::clear_planet_list()
         mStellarBodies.pop_back();
     }
 }
+
