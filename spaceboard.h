@@ -41,15 +41,15 @@ private:
     std::vector<Starship*> mTeamOneShips;
     std::vector<Starship*> mTeamTwoShips;
     std::vector<StellarBody*> mStellarBodies;
-    std::vector<std::string> mTextureNames{"BlueGiant.jpeg",
-                                          "DustPlanet.jpeg",
-                                          "earth_unshaded.jpg",
-                                          "jupiter.jpg",
-                                          "Mars2.jpg",
-                                          "PinkGiant.jpeg",
-                                          "PinkMars.jpeg",
-                                          "red_planet.jpg",
-                                          "ScaredWorld.jpeg"};
+    std::vector<std::string> mTextureNames{"TextureMap/BlueGiant.jpeg",
+                                          "TextureMap/DustPlanet.jpeg",
+                                          "TextureMap/earth_unshaded.jpg",
+                                          "TextureMap/jupiter.jpg",
+                                          "TextureMap/Mars2.jpg",
+                                          "TextureMap/PinkGiant.jpeg",
+                                          "TextureMap/PinkMars.jpeg",
+                                          "TextureMap/red_planet.jpg",
+                                          "TextureMap/ScaredWorld.jpeg"};
 
     int generate_random_int();
 };
