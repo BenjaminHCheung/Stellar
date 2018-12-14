@@ -22,7 +22,12 @@ public:
     void generate_default_lists();
     void generate_ships_lists();
     void generate_planet_list();
+    void clear_planet_list();
+    void clear_team_one();
+    void clear_team_two();
+    void clear_team_lists();
     void clear_lists();
+
 
     std::vector<Starship*>* get_team_one_ships();
     std::vector<Starship*>* get_team_two_ships();
