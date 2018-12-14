@@ -170,8 +170,13 @@ void SpaceBoard::clear_team_one()
 
 void SpaceBoard::clear_team_two()
 {
-
+    unsigned long long int size{mTeamTwoShips.size()};
+    for(unsigned long long int iterator{0}; iterator < size; iterator++)
+    {
+        mTeamTwoShips.pop_back();
+    }
 }
+
 void clear_team_lists();
 void clear_planet_list();
 void clear_lists();
