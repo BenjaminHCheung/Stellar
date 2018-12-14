@@ -179,7 +179,9 @@ void SpaceBoard::clear_team_two()
 
 void SpaceBoard::clear_planet_list()
 {
-
+    unsigned long long int size{mStellarBodies.size()};
+    for(unsigned long long int iterator{0}; iterator < size; iterator++)
+    {
+        mStellarBodies.pop_back();
+    }
 }
-
-void clear_lists();
