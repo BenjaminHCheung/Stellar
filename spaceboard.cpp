@@ -1,4 +1,5 @@
 #include "spaceboard.h"
+#include <random>
 
 SpaceBoard::SpaceBoard()
 {
@@ -74,8 +75,9 @@ void SpaceBoard::add_stellar_body(int size, int xPosition, int yPosition, int zP
 {
     double radius{size / 10.0};
     PositionNodes* spawnPosition{get_node_pointer(xPosition,yPosition,zPosition)};
+    std::string texture{mTextureNames[generate_random_int()]};
 
-    StellarBody* newObject = new StellarBody(spawnPosition, size, "", radius);
+    StellarBody* newObject = new StellarBody(spawnPosition, size, texture, radius);
     mStellarBodies.push_back(newObject);
 }
 
@@ -187,3 +189,10 @@ void SpaceBoard::clear_planet_list()
     }
 }
 
+int SpaceBoard::generate_random_int()
+{
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_int_distribution<int> uni(0,(mTextureNames.size() - 1));
+    return uni(rng);
+}
