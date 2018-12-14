@@ -73,7 +73,7 @@ TEST(GivenACommandToGenerateDefaultLists, WhenUsingTheGenerateDefaultListsFuncti
     EXPECT_EQ(expectedSize, mySpaceBoard.get_stellar_body_lists()->size());
 }
 
-TEST(GivenACommandToClearTeamOneShipList, WhenUsingTheClearTeamOneShipsFunction_AllShipsAreClearedFromTheOneList)
+TEST(GivenACommandToClearTeamOneList, WhenUsingTheClearTeamOneFunction_AllShipsAreClearedFromTeamOneList)
 {
     SpaceBoard mySpaceBoard{SpaceBoard()};
     mySpaceBoard.generate_ships_lists();
@@ -82,11 +82,14 @@ TEST(GivenACommandToClearTeamOneShipList, WhenUsingTheClearTeamOneShipsFunction_
     EXPECT_EQ(expectedSize, mySpaceBoard.get_team_one_ships()->size());
 }
 
-//TEST(GivenACommandToClearTeamOneShipList, WhenUsingTheClearTeamOneShipsFunction_AllShipsAreClearedFromTheOneList)
-//{
-//    SpaceBoard mySpaceBoard{SpaceBoard()};
-//    mySpaceBoard.generate_ships_lists();
-//}
+TEST(GivenACommandToClearTeamTwoList, WhenUsingTheClearTeamTwoFunction_AllShipsAreClearedFromTeamOneList)
+{
+    SpaceBoard mySpaceBoard{SpaceBoard()};
+    mySpaceBoard.generate_ships_lists();
+    mySpaceBoard.clear_team_two();
+    unsigned long long int expectedSize{0};
+    EXPECT_EQ(expectedSize, mySpaceBoard.get_team_two_ships()->size());
+}
 
 //TEST(GivenACommandToClearTheShipLists, WhenUsingTheClearShipsFunction_AllShipsAreClearedFromBothLists)
 //{
