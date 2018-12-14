@@ -91,18 +91,12 @@ TEST(GivenACommandToClearTeamTwoList, WhenUsingTheClearTeamTwoFunction_AllShipsA
     EXPECT_EQ(expectedSize, mySpaceBoard.get_team_two_ships()->size());
 }
 
-//TEST(GivenACommandToClearTheShipLists, WhenUsingTheClearShipsFunction_AllShipsAreClearedFromBothLists)
-//{
-//    SpaceBoard mySpaceBoard{SpaceBoard()};
-//    mySpaceBoard
-//}
+TEST(GivenACommandToClearTheStellarBodyList, WhenUsingTheClearPlanetsFunction_AllPlanetEntriesAreRemovedFromTheList)
+{
+    SpaceBoard mySpaceBoard{SpaceBoard()};
+    mySpaceBoard.generate_planet_list();
+    mySpaceBoard.clear_planet_list();
+    unsigned long long int expectedSize{0};
+    EXPECT_EQ(expectedSize, mySpaceBoard.get_stellar_body_lists()->size());
+}
 
-//TEST(GivenACommandToClearTheStellarBodyList, WhenUsingTheClearPlanetsFunction_AllPlanetEntriesAreRemovedFromTheList)
-//{
-
-//}
-
-//TEST(GivenACommandToClearLists, WhenUsingTheClearListsFunction_AllListsAreClearedOfAllEntries)
-//{
-
-//}

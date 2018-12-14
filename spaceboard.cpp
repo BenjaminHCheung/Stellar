@@ -177,6 +177,9 @@ void SpaceBoard::clear_team_two()
     }
 }
 
-void clear_team_lists();
-void clear_planet_list();
+void SpaceBoard::clear_planet_list()
+{
+
+}
+
 void clear_lists();
