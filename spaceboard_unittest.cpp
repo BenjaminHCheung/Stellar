@@ -1,21 +1,6 @@
 #include "gtest/gtest.h"
 #include "spaceboard.h"
 
-class SpaceBoardTest: public ::testing::Test
-{
-protected:
-    SpaceBoard* mSpaceBoard;
-
-    virtual void SetUp()
-    {
-        mSpaceBoard = new SpaceBoard();
-    }
-    virtual void TearDown()
-    {
-        delete mSpaceBoard;
-    }
-};
-
 TEST(GivenAShipOfAppropriateSizeAndLocationGoingIntoTeamOneList, WhenUsingAddShipFunction_AddsShipToTheCorrectTeamVectorList)
 {
     SpaceBoard mySpaceBoard{SpaceBoard()};
