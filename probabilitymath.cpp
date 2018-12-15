@@ -13,3 +13,8 @@ double calculate_distance(Starship* attacker, Starship* defender)
     double distance{sqrt(pow(differenceInX, 2) + pow(differenceInY, 2) + pow(differenceInZ, 2))};
     return distance;
 }
+
+double chance_to_hit(Starship* attacker, Starship* defender)
+{
+    return 0;
+}

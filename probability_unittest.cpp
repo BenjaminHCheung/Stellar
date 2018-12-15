@@ -71,3 +71,15 @@ TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipTwoAndFour_Re
 
     EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
 }
+
+TEST_F(CalculationTest, WhenCalculatingProbabilityToHitBetweenShipOneAndTwo_GivesTheCorrectHitRate)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[1]};
+    double distance{calculate_distance(attacker, defender)};
+
+    double calculatedChanceToHit{chance_to_hit(attacker, defender)};
+    double expectedChanceToHit{.2386};
+
+    EXPECT_NEAR(expectedChanceToHit, calculatedChanceToHit, .0001);
+}
