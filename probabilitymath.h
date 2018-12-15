@@ -5,5 +5,5 @@
 
 double calculate_distance(Starship* attacker, Starship* defender);
 double chance_to_hit(Starship* attacker, Starship* defender);
-
+double chance_to_defend(Starship* attacker, Starship* defender);
 #endif // PROBABILITYMATH_H

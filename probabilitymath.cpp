@@ -26,3 +26,8 @@ double chance_to_hit(Starship* attacker, Starship* defender)
     }
     return chanceToHit;
 }
+
+double chance_to_defend(Starship* attacker, Starship* defender)
+{
+    return 0;
+}
