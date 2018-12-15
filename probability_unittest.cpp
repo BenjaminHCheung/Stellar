@@ -20,6 +20,7 @@ protected:
         mySpaceBoard->add_starship(teamNumber, crusier, 12, 7, 3);
         mySpaceBoard->add_starship(teamNumber, destroyer, 4, 9, 10);
         mySpaceBoard->add_starship(teamNumber, corvette, 6, 1, 14);
+        mySpaceBoard->add_starship(teamNumber, battleship, 1, 0, 0);
     }
     virtual void TearDown()
     {
@@ -61,6 +62,17 @@ TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipOneAndFour_Re
     EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
 }
 
+TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipOneAndFive_ReturnsCorrectDistance)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[4]};
+
+    double calculatedDistance{calculate_distance(attacker, defender)};
+    double expectedDistance{1.00000000};
+
+    EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
+}
+
 TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipTwoAndFour_ReturnsCorrectDistance)
 {
     Starship* attacker{(*mySpaceBoard->get_team_one_ships())[1]};
@@ -83,3 +95,4 @@ TEST_F(CalculationTest, WhenCalculatingProbabilityToHitBetweenShipOneAndTwo_Give
 
     EXPECT_NEAR(expectedChanceToHit, calculatedChanceToHit, .0001);
 }
+

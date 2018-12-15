@@ -16,5 +16,13 @@ double calculate_distance(Starship* attacker, Starship* defender)
 
 double chance_to_hit(Starship* attacker, Starship* defender)
 {
-    return 0;
+    double distance{calculate_distance(attacker, defender)};
+    int size{defender->get_size()};
+
+    double chanceToHit{(size * 3)/(distance * log(distance))};
+    if(chanceToHit > 1)
+    {
+        chanceToHit = 1;
+    }
+    return chanceToHit;
 }
