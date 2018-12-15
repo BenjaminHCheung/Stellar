@@ -96,3 +96,35 @@ TEST_F(CalculationTest, WhenCalculatingProbabilityToHitBetweenShipOneAndTwo_Give
     EXPECT_NEAR(expectedChanceToHit, calculatedChanceToHit, .0001);
 }
 
+TEST_F(CalculationTest, WhenCalculatingProbabilityToHitBetweenShipOneAndThree_GivesTheCorrectHitRate)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[2]};
+
+    double calculatedChanceToHit{chance_to_hit(attacker, defender)};
+    double expectedChanceToHit{.1618};
+
+    EXPECT_NEAR(expectedChanceToHit, calculatedChanceToHit, .0001);
+}
+
+TEST_F(CalculationTest, WhenCalculatingProbabilityToHitBetweenShipOneAndFour_GivesTheCorrectHitRate)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[3]};
+
+    double calculatedChanceToHit{chance_to_hit(attacker, defender)};
+    double expectedChanceToHit{.0721};
+
+    EXPECT_NEAR(expectedChanceToHit, calculatedChanceToHit, .0001);
+}
+
+TEST_F(CalculationTest, WhenCalculatingProbabilityToHitBetweenShipOneAndFive_GivesTheCorrectHitRate)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[4]};
+
+    double calculatedChanceToHit{chance_to_hit(attacker, defender)};
+    double expectedChanceToHit{1.0000};
+
+    EXPECT_NEAR(expectedChanceToHit, calculatedChanceToHit, .0001);
+}
