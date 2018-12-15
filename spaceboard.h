@@ -32,10 +32,9 @@ public:
     std::vector<StellarBody*>* get_stellar_body_lists();
 
 private:
-    static const int mBoardLength{12};
-    static const int mBoardWidth{12};
-    static const int mBoardHeight{12};
-
+    static const int mBoardLength{15};
+    static const int mBoardWidth{15};
+    static const int mBoardHeight{15};
     PositionNodes* mSpaceGrid[mBoardLength][mBoardWidth][mBoardHeight];
 
     std::vector<Starship*> mTeamOneShips;
