@@ -29,5 +29,9 @@ double chance_to_hit(Starship* attacker, Starship* defender)
 
 double chance_to_defend(Starship* attacker, Starship* defender)
 {
-    return 0;
+    double distance{calculate_distance(attacker, defender)};
+    int size{defender->get_size()};
+
+    double chanceToDefend{(pow(size, .85) * log(distance / 2.0 + .5)) / pow(3.0, distance/10.0) / 4};
+    return chanceToDefend;
 }
