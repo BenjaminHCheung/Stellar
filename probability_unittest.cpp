@@ -28,13 +28,46 @@ protected:
 
 };
 
-TEST_F(CalculationTest, WhenUsingCalculateDistanceFunction_ReturnsCorrectDistance)
+TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipOneAndTwo_ReturnsCorrectDistance)
 {
-    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[1]};
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[1]};
+
+    double calculatedDistance{calculate_distance(attacker, defender)};
+    double expectedDistance{14.2126704};
+
+    EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
+}
+
+TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipOneAndThree_ReturnsCorrectDistance)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
     Starship* defender{(*mySpaceBoard->get_team_one_ships())[2]};
 
     double calculatedDistance{calculate_distance(attacker, defender)};
-    double expectedDistance{14.2127};
+    double expectedDistance{14.03566885};
 
-    EXPECT_DOUBLE_EQ(calculatedDistance, expectedDistance);
+    EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
+}
+
+TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipOneAndFour_ReturnsCorrectDistance)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[3]};
+
+    double calculatedDistance{calculate_distance(attacker, defender)};
+    double expectedDistance{15.26433752};
+
+    EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
+}
+
+TEST_F(CalculationTest, WhenUsingCalculateDistanceFunctionUsingShipTwoAndFour_ReturnsCorrectDistance)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[1]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[3]};
+
+    double calculatedDistance{calculate_distance(attacker, defender)};
+    double expectedDistance{13.89244399};
+
+    EXPECT_NEAR(expectedDistance, calculatedDistance, .0000001);
 }
