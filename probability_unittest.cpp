@@ -139,3 +139,36 @@ TEST_F(CalculationTest, WhenCalculatingProbabilityToDefendBetweenShipsOneAndTwo_
 
     EXPECT_NEAR(expectedChanceToDefend, calculatedChanceToDefend, .0001);
 }
+
+TEST_F(CalculationTest, WhenCalculatingProbabilityToDefendBetweenShipsOneAndThree_GivesCorrectProbabilityOfDefense)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[2]};
+
+    double calculatedChanceToDefend{chance_to_defend(attacker, defender)};
+    double expectedChanceToDefend{.1945};
+
+    EXPECT_NEAR(expectedChanceToDefend, calculatedChanceToDefend, .0001);
+}
+
+TEST_F(CalculationTest, WhenCalculatingProbabilityToDefendBetweenShipsOneAndFour_GivesCorrectProbabilityOfDefense)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[3]};
+
+    double calculatedChanceToDefend{chance_to_defend(attacker, defender)};
+    double expectedChanceToDefend{.0979};
+
+    EXPECT_NEAR(expectedChanceToDefend, calculatedChanceToDefend, .0001);
+}
+
+TEST_F(CalculationTest, WhenCalculatingProbabilityToDefendBetweenShipsOneAndFive_GivesCorrectProbabilityOfDefense)
+{
+    Starship* attacker{(*mySpaceBoard->get_team_one_ships())[0]};
+    Starship* defender{(*mySpaceBoard->get_team_one_ships())[4]};
+
+    double calculatedChanceToDefend{chance_to_defend(attacker, defender)};
+    double expectedChanceToDefend{0.0000};
+
+    EXPECT_NEAR(expectedChanceToDefend, calculatedChanceToDefend, .0001);
+}
